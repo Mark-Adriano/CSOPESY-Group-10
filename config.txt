@@ -1,0 +1,13 @@
+version_date=2026-09-20
+
+# list of group members
+developers=Adriano, Mark Luis;Buenavente, Djuvalle Antoiney;Lee, Jason Benedict;Perez, Jose Bryan
+
+# default marquee text
+default_text=Default Text
+
+# default marquee speed
+default_speed_ms=200
+
+# width of the marquee
+console_width=50
