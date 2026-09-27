@@ -7,4 +7,7 @@
 * **Perez, Jose Bryan**
 
 ## How to Run
-To run this project, open command line and yeah
+To compile this project, type:
+```bash
+g++ marquee.cpp -o marquee.exe
+```
