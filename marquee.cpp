@@ -89,6 +89,14 @@ void load_config(const string& path) {
     }
 }
 
+void goToXy(int x, int y)
+{
+    COORD coord;
+    coord.X = x - 1;
+    coord.Y = y - 1;
+    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
+}
+
 void marquee() {
     int position = 0;
     int direction = 1;
@@ -114,8 +122,17 @@ void marquee() {
 
         {
             lock_guard<mutex> lock(io_mutex);
+
+            HANDLE hConsoleOutput = GetStdHandle(STD_OUTPUT_HANDLE);
+            CONSOLE_SCREEN_BUFFER_INFO csbi;
+
+            GetConsoleScreenBufferInfo(hConsoleOutput, &csbi);
+            COORD coord = csbi.dwCursorPosition;
+            goToXy(1, coord.Y);
+
             string spaces(position, ' ');
             cout << "\r" << spaces << current_text << "    " << flush;
+            goToXy(coord.X + 1, coord.Y + 1);
         }
 
         position += direction;
