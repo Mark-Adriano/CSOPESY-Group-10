@@ -22,7 +22,7 @@ struct Config {
         "Lee, Jason Benedict",
         "Perez, Jose Bryan"
     };
-    string version_date = "2026-09-20";
+    string version_date = "2026-09-28";
     string default_text = "Default Text";
     int default_speed_ms= 200;
     int console_width = 50;
